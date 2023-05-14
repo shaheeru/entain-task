@@ -12,7 +12,7 @@ describe('Page Content', () => {
 
     var expected_title='Next To Go Races'                            //assigning the expected title text to a variable
 
-        cy.xpath('//h1[@data-testid="page-title"]')                  //Locating title element by xpath
+        cy.get('h1[data-testid="page-title"]')                        //Locating title element by using tag and an attribute
           .invoke('text').then((current_title) =>{                   //Invoking its text
             expect(current_title).to.equal(expected_title)           //Explicit assertion on title
 
