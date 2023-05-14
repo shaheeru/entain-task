@@ -19,5 +19,8 @@ Note: got rid of the tsconfig.json file
 
 **Bugs/Issue**
 -> The application was acting flaky at times, instances where a timer would jump between positive and negative value for a venue. This caused me trouble while writing tests and testing them.
+= Because of flakiness of the app, I had to use some extra waits as the network call was not being made immediately after checking/unchecking category
+= Instead of changing the config file, I introduced custom waits with the wait commands that waited for an interception to happen. 
 
+Note: If you observe discrepancy while running the test, please re-run it (for me 4/5 times the tests were passing based on the condition but due to the abnormal behaviour of the app - they did fail sometimes too) 
 
