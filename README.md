@@ -18,8 +18,6 @@ Note: got rid of the tsconfig.json file
 
 
 **Bugs/Issue**
--> The application was acting flaky at times, instances where a timer would jump between positive and negative value for a venue. This caused me trouble while writing tests and testing them
+-> The application was acting flaky at times, instances where a timer would jump between positive and negative value for a venue. This caused me trouble while writing tests and testing them.
 
 
-**Dependencies**
-Please have cypress xpath package installed in the project by using "npm i cypress-xpath"
