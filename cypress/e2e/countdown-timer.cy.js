@@ -6,7 +6,7 @@ describe('Countdown Timer', () => {
 
     var timer_row_1 = ':nth-child(1) > :nth-child(3) > :nth-child(1) > :nth-child(2)'
 
-    it.only('Should validate that timer is ticking down', () => {
+    it('Should validate that timer is ticking down', () => {
         cy.clearCookies()           //clearing cookies to avoid flakiness of the timer
         cy.wait(5000)               //waiting 5 seconds
 
