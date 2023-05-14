@@ -10,7 +10,7 @@ describe('Category Filters', () => {
         cy.visit("http://localhost:3000/")
     })
 
-    it.skip('Should validate that all checkboxes are checked by default', () => {
+    it('Should validate that all checkboxes are checked by default', () => {
 
       cy.get(checkbox_thoroughbred)
         .should('be.checked')                               //verifying if the checkbox is checked
@@ -23,7 +23,7 @@ describe('Category Filters', () => {
 
   });
 
-    it('Practice : Should validate that checkboxes filter content appropriately', () => {
+    it('Should validate that checkboxes filter content appropriately', () => {
 
         cy.log('Only races from thoroughbred should be visible on the UI')
 
@@ -48,10 +48,10 @@ describe('Category Filters', () => {
             const data = resp.response.body;                 //putting response body in data constant
             const keysOfSelectectedCat=  data.category_race_map['4a2788f8-e825-4d36-9894-efd4baf1cfae'].race_ids        //Putting objects of thoroughbred race_ids into keysOfSelectectedCat
 
-            var namesFromApi = Object.keys(data.race_summaries).filter(key => {         //putting object keys from response.body.race_summaries by filtering out keys
+            var namesFromApi = Object.keys(data.race_summaries).filter(key => {         //putting object keys from response.body.race_summaries by filtering out keys of the elements selected through dom
                 return keysOfSelectectedCat.includes(key)
             }).map(key => {
-                return data.race_summaries[key].meeting_name
+                return data.race_summaries[key].meeting_name                //getting meeting names against the filtered keys
                })
 
             const boolValue = namesFromDom.every(item => namesFromApi.includes(item))  //Checking if every item on the UI is from the selected category
@@ -105,7 +105,7 @@ describe('Category Filters', () => {
 
 
 
-    it.skip('Should validate that unchecking all checkboxes re-enables all', () => {
+    it('Should validate that unchecking all checkboxes re-enables all', () => {
 
         cy.get(checkbox_thoroughbred)                         //Getting the checkbox
           .should('be.checked')                               //Verify if the checkbox is checked
@@ -127,7 +127,7 @@ describe('Category Filters', () => {
 
     });
 
-    it.only('Verifies if the races on the UI match a combination of 2 selected categories', () =>{
+    it('Verifies if the races on the UI match a combination of 2 selected categories', () =>{
 
         cy.get(checkbox_harness).uncheck()           //unchecking the harness category
 
@@ -149,12 +149,12 @@ describe('Category Filters', () => {
             const keysOfSelectectedCat1 =  data.category_race_map['4a2788f8-e825-4d36-9894-efd4baf1cfae'].race_ids
             const keysOfSelectectedCat2 = data.category_race_map['9daef0d7-bf3c-4f50-921d-8e818c60fe61'].race_ids
 
-            const mergedKeys = keysOfSelectectedCat1.concat(keysOfSelectectedCat2);
+            const mergedKeys = keysOfSelectectedCat1.concat(keysOfSelectectedCat2);           //Merging keys from both the categories into one constant
             cy.log(mergedKeys)
             console.log('mergedKeys',mergedKeys)
 
             var namesFromApi = Object.keys(data.race_summaries).filter(key => {
-                return mergedKeys.includes(key)
+                return mergedKeys.includes(key)         ////putting object keys from response.body.race_summaries by filtering out keys of the elements selected thorugh dom
             }).map(key => {
                 return data.race_summaries[key].meeting_name
                })
