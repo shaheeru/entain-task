@@ -1,59 +1,21 @@
-# Entain Automation Coding Task
+=Entain Automation Coding Task=
 
-Thank you for your interest in the QA Engineer position here at Entain. As a part of our hiring process, we have prepared the following technical task to get a better understanding of your skills, thought process and methodology.
+First of all, Thank you for the providing me with the opportunity to showcase my thought process and skills.
+This task is composed of the right amount of skill assessment and logic building that may be required in a QA Engineer's journey, and it was an excellent brain excercise overall. Although, it started off with some basic stuff, but eventually required quite a lot of thinking
+and needed understanding of how the application was working. Though I timeboxed the task to 2.5 as mentioned in the document. An additional hour was used to get knowledge of interceptions as it happens to be something I have not used in the past.
 
-<b>Please read the following details carefully.</b>
+To start with, I preferred using JS instead of TS, therefore; created a new projected and migrated all the necessasry filed (made sure to change the extension). 
 
-## Prerequisites
+Note: got rid of the tsconfig.json file 
 
-[Node.js](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) are required to run the Next To Go web app and Cypress.
 
-## Setup
+**Task Requirements**
+-> Was able to do the mentioned tests in the spec files 
+-> Was only able to automate one test in the countdown-timer spec file (1 halfway through) but I've marked it as skip
+-> Able to do the mentioned tests on content spec file
+-> Did a bit of learning for interceptions before implementing it, but it was fun and good learning
+-> You should be able to access the branch 'test/Shaheeruddin-Ahmed'
 
-Run ```npm install``` inside the project repository.
 
-## Running the Next To Go web app
-
-Run ```npm run start``` inside the project repository.
-
-## Running Cypress
-
-Run ```npm run e2e``` inside the project repository.
-
----
-
-## Task Overview
-
-For this task, you will be required to expand the testing coverage for the Next To Go web application provided to you. The site and Cypress can be launched with the above setup commands.
-
-The site itself is a basic web application which lists the next 5 upcoming races (Next To Go) from the current time. Racing categories (thoroughbred (horse)/greyhound/harness) can be filtered using the checkboxes on the page to only show the races for the selected filters.
-
-It will be your task to test the application and identify any test cases which can be automated, including any edge cases which may need to be covered. These test/edge cases will then need to be automated using the Cypress framework (see [Cypress docs](https://docs.cypress.io/guides/core-concepts/introduction-to-cypress) for more info).
-
-We estimate that the following activity should take <b>1 - 2.5 hours</b>.
-
-Besides the predefined test cases we have provided it will be at your discretion to add coverage for components/functionality which you feel would be necessary to assure the quality of such an application. The intention of this task is to allow us insight into your ability to analyse a problem and develop thorough, holistic solutions in an automation framework such as Cypress.
-
-Two specs, along with a pre-filled spec file for your reference, have been created within the ```cypress/e2e/``` directory.
-
-## Task Requirements
-- Fill out and add tests where necessary to the ```countdown-timer``` and ```filters``` specs for each spec's respective components/functionality.
-- Fill out and add more general coverage where necessary to the ```content.cy.ts``` spec.
-- For assertions made on data built from network responses, use intercepts to assert that content displayed within the UI aligns with what is received from the network.
-- Commit any changes you make onto a new Git branch named ```test/firstname-lastname```, replacing ```firstname``` and ```lastname``` with your first and last names.
-- Follow Conventional Commits guidelines for your commit message/s (see [the guidelines](https://www.conventionalcommits.org/) for more info).
-- Once completed, push this Git repository onto a platform such as Github for our review.
-  - <b>Please ensure that this repository is made public, and double check that your branch is present on the remote repository.</b>
-
-## Additional Considerations
-
-The below points are not strict requirements for the test, but more so some aspects which you may want to implement/consider in your solution.
-
-- Negative scenario testing (e.g. failed network requests).
-- Small summaries of any bugs/issues you witness whilst implementing your solution.
-
-All additional coverage added which has not been explicitly asked for will strengthen your submission.
-
-## Issues/Support
-
-If you encounter any issues or have any questions regarding the task, please do not hesitate to reach out to your recruiter and we will endevour to address your concerns as soon as possible.
+**Bugs/Issue**
+-> The application was acting flaky at times, instances where a timer would jump between positive and negative value for a venue. This caused me trouble while writing tests and testing them
